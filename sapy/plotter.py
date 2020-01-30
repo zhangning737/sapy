@@ -20,14 +20,14 @@ def undeformed(model):
     """
     if model.ndm == 2:
         undeformed = window('Undeformed')
-        axes = undeformed.add_subplot(111, aspect='equal')
+        axes = undeformed.add_subplot(111, aspect='auto')
         geo2d(model.XYZ, model.CON, axes, color='black')
         label2d(model.XYZ, model.CON, axes)
         undeformed.tight_layout()
 
     if model.ndm == 3:
         undeformed = window('Undeformed')
-        axes = undeformed.add_subplot(111, projection='3d', aspect='equal')
+        axes = undeformed.add_subplot(111, projection='3d', aspect='auto')
         geo3d(model.XYZ, model.CON, axes, 'black')
         label3d(model.XYZ, model.CON, axes)
         undeformed.tight_layout()
@@ -47,7 +47,7 @@ def deformed(model, U):
 
     if model.ndm == 2:
         deformed = window('Deformed')
-        axes = deformed.add_subplot(111, aspect='equal')
+        axes = deformed.add_subplot(111, aspect='auto')
         geo2d(XYZ, CON, axes, 'tomato')
         geo2d(model.XYZ, model.CON, axes, 'black')
         label2d(XYZ, CON, axes)
@@ -55,7 +55,7 @@ def deformed(model, U):
 
     if model.ndm == 3:
         deformed = window('Deformed')
-        axes = deformed.add_subplot(111, projection='3d', aspect='equal')
+        axes = deformed.add_subplot(111, projection='3d', aspect='auto')
         geo3d(model.XYZ, model.CON, axes, 'black')
         geo3d(XYZ, CON, axes, 'tomato')
         label3d(XYZ, CON, axes)
@@ -135,14 +135,14 @@ def axialforce(model, Q):
     """
     if model.ndm == 2:
         axial = window('Axial')
-        axes = axial.add_subplot(111, aspect='equal')
+        axes = axial.add_subplot(111, aspect='auto')
         geo2d(model.XYZ, model.CON, axes, color='black')
         axial2d(model.XYZ, model.CON, Q, axes)
         axial.tight_layout()
 
     if model.ndm == 3:
         axial = window('Axial')
-        axes = axial.add_subplot(111, projection='3d', aspect='equal')
+        axes = axial.add_subplot(111, projection='3d', aspect='auto')
         geo3d(model.XYZ, model.CON, axes, 'black')
         axial3d(model.XYZ, model.CON, Q, axes)
         axial.tight_layout()

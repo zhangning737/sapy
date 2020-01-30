@@ -6,7 +6,7 @@ from sapy import plotter
 import matplotlib.pyplot as plt
 
 
-mesh_file = 'patch'
+mesh_file = 'test/patch'
 
 mesh = gmsh.Parse(mesh_file)
 
